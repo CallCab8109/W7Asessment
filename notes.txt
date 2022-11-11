@@ -1,0 +1,50 @@
+extra large array
+- insert 903.0226 ms
+- append 8.0513
+
+.push() is significantly faster
+.unshift() is slower by about 113x
+
+-------------------------------------
+
+large array
+- insert 13.5249 ms
+- append 606.7 μs 
+
+once more .push() is much faster to an insane degree
+
+--------------------------------------
+
+medium array
+- insert 311.6 μs 
+- append 235.7 μs 
+
+.push() is still much faster but to a slower degree as theres less to do
+
+---------------------------------------
+
+small array
+- insert 48.8 μs 
+- append 81.4 μs 
+
+.push() is the slower method by almost double
+
+----------------------------------------
+
+tiny array
+- insert 68 μs
+- append 149.5 μs
+
+shockingly, both numbers increased in time and .push() is much slower
+
+----------------------------------------
+
+end evalutation
+
+According to the results it appears that doublerAppend or the .push() method is typically the faster code method. doublerInsert or the .unshift() method is usually slower until you get down into the much smaller numbers. Both such of these methods increase in time as you get down to the very small numbers. For most situations the best method is going to be the .push() method. This is because the time difference in small numbers isn't anything recognizable but when you get to the large numbers that actually matter, it will make a difference. So even though it's slower in some cases, it's faster when it matters.
+
+-----------------------------------------
+
+why .unshift() is so slow
+
+the .unshift() method is so much slower because it must move all of the other items in the array to actually do what you want it to do which takes longer becuase instead of just moving one thing, you have to move everything.
